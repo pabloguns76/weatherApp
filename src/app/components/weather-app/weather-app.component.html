@@ -1,0 +1,15 @@
+<h1>Pronóstico del tiempo para Capital Federal</h1>
+
+<h2>Pronóstico para hoy:</h2>
+<div *ngFor="let weather of weatherForecast; let i = index">
+  <div *ngIf="i < 8">
+    <p> <strong>{{city}}</strong> {{weather.dt_txt}} {{ weather.main.temp }}°C , {{ weather.weather[0].description }}</p>
+  </div>
+</div>
+
+<h2>Pronóstico para los próximos 4 días:</h2>
+<div *ngFor="let weather of weatherForecast; let i = index">
+  <div *ngIf="i >= 8 && i < 32">
+    <p> {{ weather.main.temp }}°C - {{ weather.weather[0].description }}</p>
+  </div>
+</div>
