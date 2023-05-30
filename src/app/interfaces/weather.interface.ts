@@ -1,16 +1,32 @@
-export interface weatherData {
-  weather: Weather[]
+export interface weatherCurrentData {
   base: string
+  clouds: Clouds
+  cod: number
+  coord: Coord
+  dt: number
+  id: number
+  main: Main
+  name: string
+  weather: Weather[]
+  visibility: number
+  wind: Wind
+  // rain: Rain
+  sys: Sys
+  timezone: number
+}
+
+export interface weatherData {
+  clouds: Clouds
+  dt: number
+  weather: Weather[]
+  // base: string
   main: Main
   visibility: number
   wind: Wind
-  rain: Rain
-  clouds: Clouds
-  dt: number
+  // rain: Rain
   sys: Sys
   timezone: number
   id: number
-  name: string
   cod: number
   dt_txt: string;
 }
@@ -43,9 +59,9 @@ export interface Coord {
   gust: number
 }
 
- interface Rain {
-  "1h": number
-}
+//  interface Rain {
+//   "1h": number
+// }
 
  interface Clouds {
   all: number
