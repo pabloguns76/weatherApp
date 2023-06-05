@@ -63,7 +63,9 @@ h1,h2{
 }
 
 h2{
+  width: 100%;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .temperature-card {
@@ -76,21 +78,17 @@ h2{
   margin-bottom: 10px;
 }
 
-.daily-temperature-card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
 
-.daily-temperature-card p {
-  margin: 0;
-}
 
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  flex-direction: row;
 }
+
+
 
 .city{
   font-size: 12px;
@@ -134,5 +132,4 @@ h2{
   font-size: 14px;
   font-weight: 600;
 }
-
 

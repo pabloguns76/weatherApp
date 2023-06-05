@@ -17,10 +17,10 @@
 
 
 
-<h2>Pronóstico para hoy a las {{ currentTimestamp }}:</h2>
+<h2>Pronóstico para hoy</h2>
 <div class="flex-center">
   <div *ngFor="let weather of weatherForecast; let i = index">
-    <div class="temperature-card" *ngIf="i < 8">
+    <div class="temperature-card" *ngIf="i < 5">
         <div class="image flex__Column">
          <img class="weather-icon" src="{{base_url}}/{{ weather.weather[0].icon}}@2x.png" alt="">
          <div class="dia">{{ getDayName(weather.dt_txt) }}</div>
@@ -35,12 +35,11 @@
 </div>
 
 
-<h2>Pronóstico para los próximos 4 días:</h2>
-
+<h2>Pronóstico para los próximos 4 días</h2>
 
 <div class="flex-center">
 <div *ngFor="let weather of weatherForecast; let i = index">
-  <div class="temperature-card" *ngIf="i >= 8 && i < 32 && isStartOfDay(weather)">
+  <div class="temperature-card" *ngIf="i >= 5 && i < 32 && isStartOfDay(weather)">
     <div class="image flex__Column">
       <img class="weather-icon" src="{{base_url}}/{{ weather.weather[0].icon}}@2x.png" alt="">
       <div class="dia">{{ getDayName(weather.dt_txt) }}</div>
