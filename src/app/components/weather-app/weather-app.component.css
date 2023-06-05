@@ -1,0 +1,138 @@
+h1,h2{
+  text-align: center;
+  text-transform: uppercase;
+}
+.current-temperature-card {
+  height: 220px;
+  background-color: darkgray;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 65%;
+  margin: 0 auto;
+}
+.image {
+  display: flex;
+  height: 65%;
+  justify-content: center;
+}
+
+.stats{
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.stat{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.cuidad{
+  width: 50%;
+  background-color: rgb(21, 43, 191);
+  color:whitesmoke;
+  border-right:1px solid whitesmoke ;
+}
+
+.temperatura__Actual{
+  width: 25%;
+  background-color:  rgb(21, 43, 191);
+  color:whitesmoke;
+  text-transform: uppercase;
+  border-right: 1px solid whitesmoke;
+}
+
+.sensacion__Termica{
+  width: 25%;
+  background-color:  rgb(21, 43, 191);
+  color:whitesmoke;
+  text-transform: uppercase;
+}
+
+
+.weather-icon {
+  width: 60px;
+  height: 60px;
+
+}
+
+h2{
+  text-align: center;
+}
+
+.temperature-card {
+  width: 220px;
+  height: 250px;
+  background-color: darkgrey;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  margin-bottom: 10px;
+}
+
+.daily-temperature-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.daily-temperature-card p {
+  margin: 0;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.city{
+  font-size: 12px;
+  font-weight: 600;
+  width: 35%;
+}
+
+.fecha__hora{
+  width: 35%;
+  color: whitesmoke;
+  background-color: rgb(21, 43, 191);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.temp{
+  width: 30%;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.temp__Max{
+  width: 50%;
+}
+
+.temp__Min{
+
+  width: 50%;
+}
+
+.flex__Column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.dia {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
