@@ -4,20 +4,18 @@
 
 <div class="current-temperature-card" *ngIf="weatherCurrent && weatherCurrent!=undefined">
   <div class="image">
-     <img class="weather-icon" src="{{base_url}}/{{ weatherCurrent.weather[0].icon}}@2x.png" alt="">
+     <div class="absolute-left"><img class="weather-icon" src="{{base_url}}/{{ weatherCurrent.weather[0].icon}}@2x.png" alt=""></div>
+     <div class="absolute-right grades">{{ weatherCurrent.main.temp }}°C</div>
    </div>
   <div class="stats">
     <div class="cuidad  stat"> <h3> {{ weatherCurrent.name }}, {{ weatherCurrent.sys.country }} </h3> </div>
-    <div class="temperatura__Actual stat"> temp: {{ weatherCurrent.main.temp }}°C </div>
     <div class="sensacion__Termica stat"> St: {{ weatherCurrent.main.feels_like }}°C</div>
   </div>
 
 </div>
 
 
-
-
-<h2>Pronóstico para hoy</h2>
+<h2>Pronóstico para las proximas 24hs</h2>
 <div class="flex-center">
   <div *ngFor="let weather of weatherForecast; let i = index">
     <div class="temperature-card" *ngIf="i < 5">
@@ -26,7 +24,6 @@
          <div class="dia">{{ getDayName(weather.dt_txt) }}</div>
        </div>
         <div class="stats">
-          <div class="cuidad stat city">{{city}}</div>
          <div class="temperatura__Actual  stat temp">{{ weather.main.temp }}°C</div>
          <div class="fecha__hora stat">{{weather.dt_txt}}</div>
         </div>
@@ -35,7 +32,7 @@
 </div>
 
 
-<h2>Pronóstico para los próximos 4 días</h2>
+<h2>Pronóstico para los próximos días</h2>
 
 <div class="flex-center">
 <div *ngFor="let weather of weatherForecast; let i = index">
