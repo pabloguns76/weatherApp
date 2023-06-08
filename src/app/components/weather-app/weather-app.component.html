@@ -1,35 +1,71 @@
 
-
-<h1>Pronóstico del tiempo para Capital Federal</h1>
-
-<div class="current-temperature-card" *ngIf="weatherCurrent && weatherCurrent!=undefined">
-  <div class="image">
-     <div class="absolute-left"><img class="weather-icon" src="{{base_url}}/{{ weatherCurrent.weather[0].icon}}@2x.png" alt=""></div>
-     <div class="absolute-right grades">{{ weatherCurrent.main.temp }}°C</div>
-   </div>
-  <div class="stats">
-    <div class="cuidad  stat"> <h3> {{ weatherCurrent.name }}, {{ weatherCurrent.sys.country }} </h3> </div>
-    <div class="sensacion__Termica stat"> St: {{ weatherCurrent.main.feels_like }}°C</div>
+<div class="container">
+  <div class="h1 fontFamily">
+    <h1>Pronóstico del tiempo para Capital Federal</h1>
   </div>
 
-</div>
+  <div class="card-container">
+    <div
+      class="current-temperature-card"
+      *ngIf="weatherCurrent && weatherCurrent != undefined"
+    >
+
+      <div class="name_day fontFamily">{{ getDia() }} </div>
 
 
-<h2>Pronóstico para las proximas 24hs</h2>
-<div class="flex-center">
-  <div *ngFor="let weather of weatherForecast; let i = index">
-    <div class="temperature-card" *ngIf="i < 5">
-        <div class="image flex__Column">
-         <img class="weather-icon" src="{{base_url}}/{{ weather.weather[0].icon}}@2x.png" alt="">
-         <div class="dia">{{ getDayName(weather.dt_txt) }}</div>
-       </div>
-        <div class="stats">
-         <div class="temperatura__Actual  stat temp">{{ weather.main.temp }}°C</div>
-         <div class="fecha__hora stat">{{weather.dt_txt}}</div>
+      <div class="fecha_hora">
+        <p class="fontFamily">{{ getCurrentDate() }}</p>
+        <p class="fontFamily">{{ getCurrentTime() }}</p>
+      </div>
+
+
+      <div class="image">
+        <div class="icon">
+          <img
+            class="weather-icon"
+            src="{{ getIcon(weatherCurrent.weather[0].icon) }}"
+            alt=""
+          />
         </div>
 
+
+        <div class="temperatura_cuidad">
+          <div class="grades fontFamily">{{ weatherCurrent.main.temp }}°C</div>
+          <div class="cuidad fontFamily">
+            {{ weatherCurrent.name }}
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="fontSize  fontFamily">
+          St: {{ weatherCurrent.main.feels_like }}°C
+        </div>
+        <div class="fontSize  fontFamily">
+          humedad: {{weatherCurrent.main.humidity}}%
+        </div>
+      </div>
+    </div>
+
+
+    <div class="flex-center">
+      <div class="h2 fontFamily"><h2>Pronóstico para las próximas 24hs</h2></div>
+      <div *ngFor="let weather of weatherForecast; let i = index">
+        <div class="temperature-card" *ngIf="i < 5">
+          <div class="flex">
+            <div class="fontFamily font">{{ getDayName(weather.dt_txt) }}</div>
+            <img class="weather-icon icon-mini" src="{{getIcon(weatherCurrent.weather[0].icon)}}" alt="">
+            <div class="fontFamily font">{{ weather.main.temp }}°C</div>
+            <div class="fontFamily font">{{weather.dt_txt}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
+<!--
 
 
 <h2>Pronóstico para los próximos días</h2>
@@ -38,7 +74,7 @@
 <div *ngFor="let weather of weatherForecast; let i = index">
   <div class="temperature-card" *ngIf="i >= 5 && i < 32 && isStartOfDay(weather)">
     <div class="image flex__Column">
-      <img class="weather-icon" src="{{base_url}}/{{ weather.weather[0].icon}}@2x.png" alt="">
+      <img class="weather-icon" src="{{getIcon(weatherCurrent.weather[0].icon)}}" alt="">
       <div class="dia">{{ getDayName(weather.dt_txt) }}</div>
     </div>
     <div class="stats">
@@ -49,3 +85,5 @@
   </div>
 </div>
 </div>
+
+-->

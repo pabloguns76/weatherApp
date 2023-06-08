@@ -1,156 +1,153 @@
-h1,h2{
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  text-transform: uppercase;
+.container {
+  width: 70vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #073576;
 }
+
+.h1 {
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: blanchedalmond;
+  border-top: 2px solid blanchedalmond;
+  border-bottom: 2px solid blanchedalmond;
+}
+
+.card-container {
+  display: flex;
+  border-radius: 8px;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .current-temperature-card {
-  height: 340px;
-  background-color: rgb(197, 194, 194);
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  height: 420px;
+  width: 300px;
+  border: 1px solid black;
+  background-color: #094293;
   margin-bottom: 20px;
-  width: 50%;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  box-shadow:5px 5px 5px black;
+}
+
+.name_day {
+  margin: 10px;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid blanchedalmond;
+  text-align:initial;
+}
+
+.fecha_hora {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  border-bottom: 1px solid blanchedalmond;
+  margin: 10px;
+  font-weight: 600;
+}
+
+.image {
+  height: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid blanchedalmond;
+}
+
+.icon{
+  width: 40%;
   margin: 0 auto;
 }
-.image {
-  width: 100%;
-  position: relative;
-  display: flex;
-  height: 65%;
-  justify-content: center;
-  align-items: center;
-}
-.absolute-right{
-  position: absolute;
-  right: 50%;
-}
-.absolute-left{
-  position: absolute;
-  left: 65%;
-}
-.grades{
-  font-size: 80px;
-  color: whitesmoke;
-}
-.stats{
-  width: 100%;
-  height: 35%;
-  display: flex;
-  justify-content: space-between;
-}
-
-
-
-.stat{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.cuidad{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  width: 65%;
-  background-color: rgb(21, 43, 191);
-  color:whitesmoke;
-  border-right:1px solid whitesmoke ;
-}
-
-.temperatura__Actual{
-  font-family: Arial, Helvetica, sans-serif;
-  width: 25%;
-  background-color:  rgb(21, 43, 191);
-  color:whitesmoke;
-  text-transform: uppercase;
-  border-right: 1px solid whitesmoke;
-}
-
-.sensacion__Termica{
-  width: 35%;
-  background-color:  rgb(21, 43, 191);
-  color:whitesmoke;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 
 .weather-icon {
   width: 120px;
   height: 120px;
-
 }
 
-h2{
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.temperature-card {
-  width: 340px;
-  height: 420px;
-  background-color: rgb(197, 194, 194);
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  margin: 10px;
-  margin-bottom: 10px;
-}
-
-
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-
-/*
-.city{
-  font-size: 18px;
-  font-weight: 600;
-  width: 35%;
-}
-*/
-.fecha__hora{
-  font-family: Arial, Helvetica, sans-serif;
-  width: 65%;
-  color: whitesmoke;
-  background-color: rgb(21, 43, 191);
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.temp{
-  width: 35%;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.temp__Max{
-  width: 50%;
-}
-
-.temp__Min{
-
-  width: 50%;
-}
-
-.flex__Column{
+.temperatura_cuidad {
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  margin-top: 10px;
 }
 
-
-.dia {
-  text-transform: uppercase;
-  font-size: 16px;
+.grades {
+  font-size: 45px;
   font-weight: 600;
+
 }
 
+.cuidad {
+  margin-top: 10px;
+  font-weight:600;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.fontSize {
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.fontFamily{
+  font-family: 'Titillium Web', sans-serif;
+  text-transform:uppercase ;
+  color:blanchedalmond;
+}
+
+.h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.flex-center{
+  width: 65%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.temperature-card{
+  width: 360px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #094293;
+  box-shadow:5px 5px 5px black;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-mini {
+  width: 60px;
+  height: 60px;
+}
+
+.font{
+  font-weight: 600;
+  padding: 10px;
+  font-size: 14px;
+
+}

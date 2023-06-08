@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { weatherData, weatherCurrentData } from 'src/app/interfaces/weather.interface';
+import { IconServicesService } from 'src/app/services/icon-services.service';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class WeatherAppComponent implements OnInit {
   city: string = '';
   public base_url = 'https://openweathermap.org/img/wn'
 
-  constructor(private weatherService: WeatherService) {
+  constructor(private weatherService: WeatherService , private iconsServices: IconServicesService) {
       const date = new Date();
       this.currentTimestamp = date.toLocaleTimeString();
   }
@@ -72,6 +73,24 @@ getDayName(dateString: string): string {
   return days[dayIndex];
 }
 
+getIcon(weather: string): string {
+  const urlIcon = `${this.base_url}/${weather}@2x.png`;
+  return this.iconsServices.getIconUrl(urlIcon);
+}
+getCurrentDate(): string {
+  const currentDate = new Date();
+  return currentDate.toLocaleDateString();
+}
 
+getCurrentTime(): string {
+  const currentDate = new Date();
+  return currentDate.toLocaleTimeString();
+}
 
+getDia(): string {
+  const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+  const diaHoy = new Date().getDay()
+  console.log(days[diaHoy])
+  return days[diaHoy];
+}
 }
