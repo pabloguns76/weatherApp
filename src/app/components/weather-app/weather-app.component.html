@@ -30,7 +30,7 @@
 
 
         <div class="temperatura_cuidad">
-          <div class="grades fontFamily">{{ weatherCurrent.main.temp }}°C</div>
+          <div class="grades fontFamily">{{weatherCurrent.main.temp}}°C</div>
           <div class="cuidad fontFamily">
             {{ weatherCurrent.name }}
           </div>
@@ -54,7 +54,7 @@
         <div class="temperature-card" *ngIf="i < 5">
           <div class="flex">
             <div class="fontFamily font">{{ getDayName(weather.dt_txt) }}</div>
-            <img class="weather-icon icon-mini" src="{{getIcon(weatherCurrent.weather[0].icon)}}" alt="">
+            <img class="weather-icon icon-mini" src="{{getIcon(weather.weather[0].icon)}}" alt="">
             <div class="fontFamily font">{{ weather.main.temp }}°C</div>
             <div class="fontFamily font">{{weather.dt_txt}}</div>
           </div>
@@ -71,7 +71,7 @@
       <div class="flex">
 
         <div class="fontFamily font">{{ getDayName(weather.dt_txt) }}</div>
-        <img class="weather-icon icon-mini" src="{{getIcon(weatherCurrent.weather[0].icon)}}" alt="">
+        <img class="weather-icon icon-mini" src="{{getIcon(weather.weather[0].icon)}}" alt="">
         <div class="fontFamily font "> {{ getMaxTemperatureOfDay(weather) }}°C</div>
       </div>
 

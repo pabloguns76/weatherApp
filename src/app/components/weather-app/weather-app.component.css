@@ -1,5 +1,7 @@
 .container {
-  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
   height: 100vh;
   margin: 0 auto;
   padding: 20px;
@@ -16,9 +18,10 @@
 }
 
 .card-container {
+  height: 78%;
   display: flex;
   border-radius: 8px;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -30,8 +33,7 @@
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-radius: 20px;
-  box-shadow:5px 5px 5px black;
-
+  box-shadow: 5px 5px 5px black;
 }
 
 .name_day {
@@ -40,11 +42,11 @@
   font-size: 24px;
   font-weight: bold;
   border-bottom: 1px solid blanchedalmond;
-  text-align:initial;
+  text-align: initial;
 }
 
 .fecha_hora {
-  height: 25px;
+  height: 30px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -62,8 +64,13 @@
   margin-bottom: 20px;
   border-bottom: 1px solid blanchedalmond;
 }
+.fecha_hora p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
 
-.icon{
+.icon {
   width: 40%;
   margin: 0 auto;
 }
@@ -85,12 +92,11 @@
 .grades {
   font-size: 45px;
   font-weight: 600;
-
 }
 
 .cuidad {
   margin-top: 10px;
-  font-weight:600;
+  font-weight: 600;
 }
 
 .stats {
@@ -104,33 +110,35 @@
   padding: 0 10px;
 }
 
-.fontFamily{
+.fontFamily {
   font-family: 'Titillium Web', sans-serif;
-  text-transform:uppercase ;
-  color:blanchedalmond;
+  text-transform: uppercase;
+  color: blanchedalmond;
 }
 
 .h2 {
   width: 100%;
   text-align: center;
+  margin-top: 10px;
 }
 
-.flex-center{
-  width: 65%;
+.flex-center {
+  width: 50%;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.temperature-card{
+.temperature-card {
+  display: flex;
+  flex-wrap: wrap;
   width: 360px;
   height: 80px;
   margin: 10px;
   border-radius: 20px;
   background-color: #094293;
-  box-shadow:5px 5px 5px black;
+  box-shadow: 5px 5px 5px black;
   align-items: center;
 }
 
@@ -145,23 +153,65 @@
   height: 60px;
 }
 
-.font{
+.font {
   font-weight: 600;
   padding: 10px;
   font-size: 14px;
-
 }
 
-.mini-card{
+.mini-card {
+  display: flex;
   width: 240px;
   height: 60px;
   margin: 15px;
-
 }
 
-.flex-row{
+.flex-row {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
   justify-content: space-between;
+}
+
+/* Estilos responsive */
+
+@media only screen and (max-width: 768px) {
+  .container{
+    height: 100%;
+    align-items: center;
+  }
+  .card-container {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .current-temperature-card {
+    width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+  }
+  .grades{
+    font-size: 20px;
+  }
+  .name_day,
+  .fecha_hora,
+  .image,
+  .temperatura_cuidad,
+  .flex-center,
+  .temperature-card,
+  .mini-card {
+    margin: 5px;
+  }
+  .temperature-card{
+    justify-content: space-around;
+  }
+ .mini-card{
+   width: 100%;
+   justify-content: space-evenly;
+ }  
+
+  .flex-row{
+    flex-direction: column;
+  }
 }
