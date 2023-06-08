@@ -61,29 +61,24 @@
         </div>
       </div>
     </div>
+
+  </div>
+
+
+  <div class="flex-row">
+  <div *ngFor="let weather of weatherForecast; let i = index">
+    <div class="temperature-card mini-card" *ngIf="i >= 5 && i < 32 && isStartOfDay(weather)">
+      <div class="flex">
+
+        <div class="fontFamily font">{{ getDayName(weather.dt_txt) }}</div>
+        <img class="weather-icon icon-mini" src="{{getIcon(weatherCurrent.weather[0].icon)}}" alt="">
+        <div class="fontFamily font "> {{ getMaxTemperatureOfDay(weather) }}°C</div>
+      </div>
+
+    </div>
+  </div>
   </div>
 </div>
 
 
-<!--
 
-
-<h2>Pronóstico para los próximos días</h2>
-
-<div class="flex-center">
-<div *ngFor="let weather of weatherForecast; let i = index">
-  <div class="temperature-card" *ngIf="i >= 5 && i < 32 && isStartOfDay(weather)">
-    <div class="image flex__Column">
-      <img class="weather-icon" src="{{getIcon(weatherCurrent.weather[0].icon)}}" alt="">
-      <div class="dia">{{ getDayName(weather.dt_txt) }}</div>
-    </div>
-    <div class="stats">
-      <div class="temperatura__Actual  stat temp__Max "> {{ getMaxTemperatureOfDay(weather) }}°C</div>
-      <div class="temperatura__Actual stat  temp__Min">{{ getMinTemperatureOfDay(weather) }}°C</div>
-    </div>
-
-  </div>
-</div>
-</div>
-
--->
