@@ -1,8 +1,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
-  height: 100vh;
   margin: 0 auto;
   padding: 20px;
   background-color: #073576;
@@ -18,19 +16,19 @@
 }
 
 .card-container {
-  height: 78%;
   display: flex;
   border-radius: 8px;
   justify-content: space-around;
-  align-items: center;
+
 }
 
 .current-temperature-card {
-  height: 420px;
+  height:fit-content;
   width: 300px;
   border: 1px solid black;
   background-color: #094293;
   margin-bottom: 20px;
+  margin-top: 20px;
   padding-bottom: 20px;
   border-radius: 20px;
   box-shadow: 5px 5px 5px black;
@@ -46,7 +44,7 @@
 }
 
 .fecha_hora {
-  height: 30px;
+  height: 25px;
   display: flex;
   align-items: center;
   text-align: center;

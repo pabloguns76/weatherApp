@@ -1,14 +1,10 @@
-
 <div class="container">
   <div class="h1 fontFamily">
     <h1>Pronóstico del tiempo para Capital Federal</h1>
   </div>
 
   <div class="card-container">
-    <div
-      class="current-temperature-card"
-      *ngIf="weatherCurrent && weatherCurrent != undefined"
-    >
+    <div class="current-temperature-card" *ngIf="weatherCurrent && weatherCurrent != undefined">
 
       <div class="name_day fontFamily">{{ getDia() }} </div>
 
@@ -21,11 +17,7 @@
 
       <div class="image">
         <div class="icon">
-          <img
-            class="weather-icon"
-            src="{{ getIcon(weatherCurrent.weather[0].icon) }}"
-            alt=""
-          />
+          <img class="weather-icon" src="{{ getIcon(weatherCurrent.weather[0].icon) }}" alt="" />
         </div>
 
 
@@ -49,7 +41,9 @@
 
 
     <div class="flex-center">
-      <div class="h2 fontFamily"><h2>Pronóstico para las próximas 24hs</h2></div>
+      <div class="h2 fontFamily">
+        <h2>Pronóstico para las próximas 24hs</h2>
+      </div>
       <div *ngFor="let weather of weatherForecast; let i = index">
         <div class="temperature-card" *ngIf="i < 5">
           <div class="flex">
@@ -66,19 +60,16 @@
 
 
   <div class="flex-row">
-  <div *ngFor="let weather of weatherForecast; let i = index">
-    <div class="temperature-card mini-card" *ngIf="i >= 5 && i < 32 && isStartOfDay(weather)">
-      <div class="flex">
+    <div *ngFor="let weather of weatherForecast; let i = index">
+      <div class="temperature-card mini-card" *ngIf="i >= 5 && i < 32 && isStartOfDay(weather)">
+        <div class="flex">
 
-        <div class="fontFamily font">{{ getDayName(weather.dt_txt) }}</div>
-        <img class="weather-icon icon-mini" src="{{getIcon(weather.weather[0].icon)}}" alt="">
-        <div class="fontFamily font "> {{ getMaxTemperatureOfDay(weather) }}°C</div>
+          <div class="fontFamily font">{{ getDayName(weather.dt_txt) }}</div>
+          <img class="weather-icon icon-mini" src="{{getIcon(weather.weather[0].icon)}}" alt="">
+          <div class="fontFamily font "> {{ getMaxTemperatureOfDay(weather) }}°C</div>
+        </div>
+
       </div>
-
     </div>
   </div>
-  </div>
 </div>
-
-
-
