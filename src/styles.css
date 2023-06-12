@@ -4,6 +4,5 @@
   margin: 0;
 }
 body {
-  background-cololinear-gradient(0deg, rgba(27,112,226,1) 0%, rgba(56,78,161,1) 50%, rgba(127,149,207,1) 100%);r: white;
-
+  background: linear-gradient(90deg, rgba(57,51,175,1) 0%, rgba(75,75,177,1) 35%, rgba(61,141,157,1) 100%);
 }

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { weatherData, weatherCurrentData } from 'src/app/interfaces/weather.interface';
 import { IconServicesService } from 'src/app/services/icon-services.service';
 import { WeatherService } from 'src/app/services/weather.service';
+import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
+
 
 @Component({
   selector: 'app-weather-app',
@@ -67,7 +70,7 @@ getMinTemperatureOfDay(weather: weatherData): number {
   return Math.min(...temperatures);
 }
 getDayName(dateString: string): string {
-  const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+  const days = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
   const date = new Date(dateString);
   const dayIndex = date.getDay();
   return days[dayIndex];
@@ -79,8 +82,9 @@ getIcon(weather: string): string {
 }
 getCurrentDate(): string {
   const currentDate = new Date();
-  return currentDate.toLocaleDateString();
+  return format(currentDate, 'dd MMM', { locale: es });
 }
+
 
 getCurrentTime(): string {
   const currentDate = new Date();
@@ -93,4 +97,17 @@ getDia(): string {
   console.log(days[diaHoy])
   return days[diaHoy];
 }
+
+getFormattedDateTime(dateTimeString: string): string {
+  const dateTime = new Date(dateTimeString);
+  const day = dateTime.getDate().toString().padStart(2, '0');
+  const month = this.getMonthName(dateTime.getMonth());
+  const time = dateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  return `${day} ${month} ${time}`;
+}
+getMonthName(monthIndex: number): string {
+  const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  return months[monthIndex];
+}
+
 }

@@ -3,7 +3,7 @@
   flex-direction: column;
   margin: 0 auto;
   padding: 20px;
-  background-color: #073576;
+
 }
 
 .h1 {
@@ -28,7 +28,7 @@
   border: 1px solid black;
   background-color: #094293;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   padding-bottom: 20px;
   border-radius: 20px;
   box-shadow: 5px 5px 5px black;
@@ -121,7 +121,7 @@
 }
 
 .flex-center {
-  width: 50%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,9 +130,10 @@
 
 .temperature-card {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  width: 360px;
-  height: 80px;
+  width: auto;
+  height: auto;
   margin: 10px;
   border-radius: 20px;
   background-color: #094293;
@@ -159,7 +160,6 @@
 
 .mini-card {
   display: flex;
-  width: 240px;
   height: 60px;
   margin: 15px;
 }
@@ -175,6 +175,7 @@
   .container{
     height: 100%;
     align-items: center;
+    width: auto;
   }
   .card-container {
     flex-direction: column;
@@ -185,7 +186,7 @@
   }
 
   .current-temperature-card {
-    width: 100%;
+    width: auto;
     margin-bottom: 20px;
     height: auto;
   }
@@ -199,15 +200,16 @@
   .flex-center,
   .temperature-card,
   .mini-card {
-    margin: 5px;
+    margin: 10px;
   }
   .temperature-card{
-    justify-content: space-around;
+    justify-content: space-evenly;
+    width: auto;
   }
  .mini-card{
-   width: 100%;
+   width: auto;
    justify-content: space-evenly;
- }  
+ }
 
   .flex-row{
     flex-direction: column;
