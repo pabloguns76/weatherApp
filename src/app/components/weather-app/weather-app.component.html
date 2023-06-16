@@ -1,11 +1,12 @@
 <div class="container">
   <div class="h1 fontFamily">
-    <h1>Pronóstico del tiempo para Capital Federal</h1>
+    <h1>Pronóstico del tiempo para {{ city }}</h1>
+    <app-search (searchCity)="onSearchCity($event)"></app-search>
   </div>
 
   <div class="card-container">
     <div class="flex-center">
-      <h2 class="h2 fontFamily">Clima Actual</h2>
+      <h2 class="h2 fontFamily" *ngIf="showTitle">Clima Actual</h2>
       <div
         class="current-temperature-card"
         *ngIf="weatherCurrent && weatherCurrent != undefined"
@@ -48,7 +49,7 @@
     </div>
 
     <div class="flex-center">
-      <div class="h2 fontFamily">
+      <div class="h2 fontFamily" *ngIf="showTitle">
         <h2>Pronóstico para las próximas 24hs</h2>
       </div>
       <div *ngFor="let weather of weatherForecast; let i = index">
@@ -69,7 +70,9 @@
       </div>
     </div>
   </div>
-  <h2 class="h2 fontFamily">pronóstico del tiempo extendido</h2>
+  <h2 class="h2 fontFamily" *ngIf="showTitle">
+    pronóstico del tiempo extendido
+  </h2>
   <div class="flex-row">
     <div *ngFor="let weather of weatherForecast; let i = index">
       <div
