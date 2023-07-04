@@ -20,6 +20,7 @@ export class WeatherAppComponent implements OnInit {
   city: string = '';
   public base_url = 'https://openweathermap.org/img/wn';
   showTitle: boolean =false ;
+  isLoading: boolean = false;
 
   constructor(
     private weatherService: WeatherService,
@@ -31,22 +32,23 @@ export class WeatherAppComponent implements OnInit {
 
   ngOnInit() {
     // Obtener el pronóstico del tiempo
-    this.loadForecast();
-    this.loadCurrent();
+    
   }
 
   loadForecast() {
-    // let query = 'Buenos%20Aires,ar';
+     this.isLoading = true;
     this.weatherService.getForecast(this.city).subscribe((data: any) => {
       this.weatherForecast = data.list;
       this.city = data.city.name;
+      this.isLoading = false;
     });
   }
   loadCurrent() {
-    //let query = 'Buenos%20Aires,ar';
+    this.isLoading = true;
     this.weatherService.getCurrentWeather(this.city).subscribe((data: any) => {
       this.weatherCurrent = data;
       console.log(this.weatherCurrent);
+      this.isLoading = false;
     });
   }
 
